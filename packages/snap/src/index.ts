@@ -1,4 +1,7 @@
-import type { OnNameLookupHandler } from '@metamask/snaps-sdk';
+import type {
+  OnNameLookupHandler,
+  OnRpcRequestHandler,
+} from '@metamask/snaps-sdk';
 
 import { getChainIdFromEIP155, getChainConfig, isSupportedTLD } from './config';
 import { resolveZNSName, reverseResolveAddress } from './znsResolver';
@@ -60,4 +63,12 @@ export const onNameLookup: OnNameLookupHandler = async (request) => {
   }
 
   return null;
+};
+
+export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
+  if (request.method === 'onNameLookup') {
+    const params = request.params as Parameters<OnNameLookupHandler>[0];
+    return onNameLookup(params);
+  }
+  throw new Error('Method not found.');
 };
