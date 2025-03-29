@@ -1,4 +1,4 @@
-import { expect } from '@jest/globals';
+import { beforeEach, expect, jest, describe, it } from '@jest/globals';
 // import { installSnap } from '@metamask/snaps-jest';
 
 import { onNameLookup } from '.';
@@ -18,7 +18,7 @@ describe('onNameLookup', () => {
   describe('forward resolution', () => {
     it('should resolve a valid domain to an address', async () => {
       const mockAddress = '0x1234567890123456789012345678901234567890';
-      (resolveZNSName as jest.Mock).mockResolvedValue(mockAddress);
+      (resolveZNSName as jest.Mock).mockResolvedValue(mockAddress as never);
 
       const result = await onNameLookup({
         chainId: 'eip155:137',
@@ -39,7 +39,7 @@ describe('onNameLookup', () => {
 
     it('should handle special character TLDs', async () => {
       const mockAddress = '0x1234567890123456789012345678901234567890';
-      (resolveZNSName as jest.Mock).mockResolvedValue(mockAddress);
+      (resolveZNSName as jest.Mock).mockResolvedValue(mockAddress as never);
 
       const result = await onNameLookup({
         chainId: 'eip155:167000',
@@ -83,7 +83,9 @@ describe('onNameLookup', () => {
     it('should resolve an address to a domain', async () => {
       const mockDomain = 'example.poly';
       const mockAddress = '0x1234567890123456789012345678901234567890';
-      (reverseResolveAddress as jest.Mock).mockResolvedValue(mockDomain);
+      (reverseResolveAddress as jest.Mock).mockResolvedValue(
+        mockDomain as never,
+      );
 
       const result = await onNameLookup({
         chainId: 'eip155:137',
