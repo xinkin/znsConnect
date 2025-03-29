@@ -1,7 +1,7 @@
 {
-  "name": "snap",
-  "version": "0.1.0",
-  "description": "The 'Hello, world!' of MetaMask Snaps, now written in TypeScript.",
+  "name": "zns-connect-snap",
+  "version": "0.1.4",
+  "description": "ZNS domain resolution for MetaMask",
   "repository": {
     "type": "git",
     "url": "https://github.com/xinkin/znsConnect.git"
@@ -10,6 +10,7 @@
   "main": "./dist/bundle.js",
   "files": [
     "dist/",
+    "images/",
     "snap.manifest.json"
   ],
   "scripts": {

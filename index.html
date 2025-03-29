@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Install ZNS Snap</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      button {
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #1098fc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0d86e0;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="installButton">Install ZNS Snap</button>
+
+    <script>
+      const connectSnap = async () => {
+        try {
+          // Request to install the snap
+          await window.ethereum.request({
+            method: 'wallet_requestSnaps',
+            params: {
+              'npm:zns-connect-snap': {},
+            },
+          });
+          alert('Snap installed successfully!');
+        } catch (error) {
+          console.error(error);
+          alert(`Error: ${error.message || 'Could not install snap'}`);
+        }
+      };
+
+      document
+        .getElementById('installButton')
+        .addEventListener('click', async () => {
+          if (typeof window.ethereum === 'undefined') {
+            alert('Please install MetaMask Flask!');
+            return;
+          }
+          await connectSnap();
+        });
+    </script>
+  </body>
+</html>

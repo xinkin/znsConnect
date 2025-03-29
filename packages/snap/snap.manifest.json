@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "ZNS domain resolution for MetaMask",
   "proposedName": "zns-connect",
   "repository": {
@@ -7,11 +7,12 @@
     "url": "https://github.com/xinkin/znsConnect.git"
   },
   "source": {
-    "shasum": "ap1sNrKMfBL4UKWy4XewoZutfUgugwRVzYRS+p+JXcQ=",
+    "shasum": "aiBaD3bTgCi1qzxccF2N1Dd+LqjAYYhnJpXEMETWqVg=",
     "location": {
       "npm": {
+        "iconPath": "./images/icon.svg",
         "filePath": "dist/bundle.js",
-        "packageName": "snap",
+        "packageName": "zns-connect-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
