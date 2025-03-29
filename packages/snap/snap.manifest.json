@@ -1,13 +1,13 @@
 {
   "version": "0.1.0",
-  "description": "An example Snap written in TypeScript.",
-  "proposedName": "TypeScript Example",
+  "description": "ZNS domain resolution for MetaMask",
+  "proposedName": "zns-connect",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/template-snap-monorepo.git"
   },
   "source": {
-    "shasum": "w6U/S41ex1qqfj8JTvbvr8xUrooUeb1XjJOHH1J7SoU=",
+    "shasum": "fY5/G+1pMlxyPiFKMPa/GZ0lvPT1Cc/9ge9IPeOVS2s=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -17,11 +17,67 @@
     }
   },
   "initialPermissions": {
-    "snap_dialog": {},
-    "endowment:rpc": {
-      "dapps": true,
-      "snaps": false
-    }
+    "endowment:name-lookup": {
+      "chains": [
+        "eip155:57073",
+        "eip155:1868",
+        "eip155:2741",
+        "eip155:80094",
+        "eip155:130",
+        "eip155:2632500",
+        "eip155:7777777",
+        "eip155:98865",
+        "eip155:33139",
+        "eip155:56",
+        "eip155:8453",
+        "eip155:146",
+        "eip155:478",
+        "eip155:534352",
+        "eip155:81457",
+        "eip155:167000",
+        "eip155:137",
+        "eip155:43111",
+        "eip155:66665",
+        "eip155:10143",
+        "eip155:393",
+        "eip155:6342",
+        "eip155:9788",
+        "eip155:281123",
+        "eip155:1440002",
+        "eip155:313313"
+      ],
+      "matchers": {
+        "tlds": [
+          "honey",
+          "cz",
+          "ink",
+          "gold",
+          "boss",
+          "speed",
+          "abs",
+          "future",
+          "goon",
+          "form",
+          "scroll",
+          "blast",
+          "%f0%9f%a5%81",
+          "poly",
+          "defi",
+          "coti",
+          "ape",
+          "hvm",
+          "ceo",
+          "mnd",
+          "nexus",
+          "mega",
+          "tabi",
+          "athene",
+          "xrp",
+          "sahara"
+        ]
+      }
+    },
+    "endowment:network-access": {}
   },
   "platformVersion": "6.18.0",
   "manifestVersion": "0.1"
