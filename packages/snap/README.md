@@ -1,12 +1,13 @@
-# TypeScript Example Snap
+# ZNS Connect Snap
 
-This snap demonstrates how to develop a snap with TypeScript. It is a simple
-snap that displays a confirmation dialog when the `hello` JSON-RPC method is
-called.
+This snap enables MetaMask to resolve domain names using the ZNS Connect. It supports multiple blockchain networks and their corresponding top-level domains (TLDs).
 
-## Testing
+## Features
 
-The snap comes with some basic tests, to demonstrate how to write tests for
-snaps. To test the snap, run `yarn test` in this directory. This will use
-[`@metamask/snaps-jest`](https://github.com/MetaMask/snaps/tree/main/packages/snaps-jest)
-to run the tests in `src/index.test.ts`.
+- Domain name resolution across multiple chains
+- Reverse address resolution to find domain names
+- Support for numerous TLDs including .honey, .cz, .ink, .gold, .boss, .speed, .abs, .future, .goon, .form, .poly, and many more
+
+## Supported Networks
+
+The snap supports multiple EVM-compatible networks, each with their own TLDs. The complete list of supported chains can be found in the snap's manifest file.
