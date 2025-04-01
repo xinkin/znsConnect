@@ -1,6 +1,5 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /**
- * Resolves a ZNS name to its corresponding address
- *
  * @param name - The ZNS name to resolve (e.g., "xinkin")
  * @param chainId - The blockchain chain ID (e.g., 137 for Polygon)
  * @returns The resolved address or null if resolution fails
@@ -16,14 +15,11 @@ export async function resolveZNSName(
     const data = await response.json();
     return data.address || null;
   } catch (error) {
-    console.error('Error resolving ZNS name:', error);
-    return null;
+    throw new Error(`Error resolving ZNS name: ${error}`);
   }
 }
 
 /**
- * Performs a reverse lookup to resolve an address to its primary ZNS name
- *
  * @param address - The blockchain address to reverse resolve
  * @param chainId - The blockchain chain ID (e.g., 137 for Polygon)
  * @returns The primary ZNS name or null if resolution fails
@@ -37,10 +33,8 @@ export async function reverseResolveAddress(
       `https://zns.bio/api/resolveAddress?address=${address}&chain=${chainId}`,
     );
     const data = await response.json();
-    // Return the first domain as primary, or null if no domains exist
     return data.primaryDomain || null;
   } catch (error) {
-    console.error('Error performing reverse lookup:', error);
-    return null;
+    throw new Error(`Error performing reverse lookup: ${error}`);
   }
 }

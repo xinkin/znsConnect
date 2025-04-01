@@ -14,8 +14,6 @@ export const SUPPORTED_CHAINS: ChainConfig[] = tlds.map((tld) => ({
 }));
 
 /**
- * Converts an EIP155 chain ID string to a number
- *
  * @param eip155ChainId - The EIP155 chain ID string (e.g., "eip155:1")
  * @returns The numeric chain ID
  * @throws Error if the chain ID format is invalid
@@ -33,8 +31,6 @@ export function getChainIdFromEIP155(eip155ChainId: string): number {
 }
 
 /**
- * Converts a numeric chain ID to an EIP155 string
- *
  * @param chainId - The numeric chain ID
  * @returns The EIP155 chain ID string
  */
@@ -43,8 +39,6 @@ export function getEIP155FromChainId(chainId: number): string {
 }
 
 /**
- * Gets the chain configuration for a given chain ID
- *
  * @param chainId - The numeric chain ID
  * @returns The chain configuration or undefined if not found
  */
@@ -53,8 +47,6 @@ export function getChainConfig(chainId: number): ChainConfig | undefined {
 }
 
 /**
- * Checks if a domain has a supported TLD
- *
  * @param domain - The domain to check
  * @returns True if the domain has a supported TLD
  */
@@ -66,8 +58,6 @@ export function isSupportedTLD(domain: string): boolean {
 }
 
 /**
- * Gets all supported chain IDs in EIP155 format
- *
  * @returns Array of EIP155 chain ID strings
  */
 export function getAllChainIds(): string[] {
@@ -75,8 +65,6 @@ export function getAllChainIds(): string[] {
 }
 
 /**
- * Gets all supported TLDs
- *
  * @returns Array of supported TLD strings
  */
 export function getAllTLDs(): string[] {
