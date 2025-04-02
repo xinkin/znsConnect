@@ -1,6 +1,6 @@
 {
-  "name": "zns-connect-snap",
-  "version": "0.1.4",
+  "name": "zns-connect",
+  "version": "0.1.5",
   "description": "ZNS domain resolution for MetaMask",
   "repository": {
     "type": "git",
