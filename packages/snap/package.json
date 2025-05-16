@@ -1,6 +1,6 @@
 {
   "name": "zns-connect",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "ZNS domain resolution for MetaMask",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@metamask/snaps-sdk": "~6.18.0",
+    "@metamask/snaps-sdk": "~6.16.0",
     "@sayfer_io/snapper": "^0.19.0"
   },
   "devDependencies": {
